@@ -302,7 +302,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                         Expanded(
                           child: _buildSocialButton(
                             label: 'Google',
-                            icon: Icons.g_mobiledata,
+                            icon: Icons.add,
                             onPressed: () {
                               // Handle Google sign in
                             },

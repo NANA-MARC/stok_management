@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'RegisterPage.dart';
-import 'ManagePage.dart';
 import '../services/auth_service.dart';
+import 'dashboardpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -279,7 +279,7 @@ class _LoginPageState extends State<LoginPage> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            const CategoriesPage(),
+                                            const DashboardPage(),
                                       ),
                                     );
                                   } else {

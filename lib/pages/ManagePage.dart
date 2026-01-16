@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import '../services/category_service.dart';
+import 'ManagePage.dart';
+import 'productpage.dart';
+import 'dashboardpage.dart';
+import 'profilepage.dart';
+import 'stokpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +35,7 @@ class CategoriesPage extends StatefulWidget {
 }
 
 class _CategoriesPageState extends State<CategoriesPage> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 3;
   final CategoryService _categoryService = CategoryService();
   List<dynamic> categories = [];
   bool _isLoading = true;
@@ -684,11 +689,189 @@ class _CategoriesPageState extends State<CategoriesPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNavItem(Icons.dashboard_outlined, 'Dashboard', 0),
-              _buildNavItem(Icons.inventory_2_outlined, 'Products', 1),
-              _buildNavItem(Icons.category, 'Categories', 2),
-              _buildNavItem(Icons.store_outlined, 'Stock', 3),
-              _buildNavItem(Icons.person_outline, 'Profile', 4),
+              //bouton Dashboard
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DashboardPage(),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.dashboard,
+                      color: _selectedIndex == 1
+                          ? const Color(0xFF1E3A5F)
+                          : const Color(0xFF94A3B8),
+                      size: 26,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Dashboard',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: _selectedIndex == 1
+                            ? const Color(0xFF1E3A5F)
+                            : const Color(0xFF94A3B8),
+                        fontWeight: _selectedIndex == 1
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              //bouton products
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProductsPage(),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.inventory_2_outlined,
+                      color: _selectedIndex == 2
+                          ? const Color(0xFF1E3A5F)
+                          : const Color(0xFF94A3B8),
+                      size: 26,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Products',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: _selectedIndex == 2
+                            ? const Color(0xFF1E3A5F)
+                            : const Color(0xFF94A3B8),
+                        fontWeight: _selectedIndex == 2
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              //bouton categories
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CategoriesPage(),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.category_outlined,
+                      color: _selectedIndex == 3
+                          ? const Color(0xFF1E3A5F)
+                          : const Color(0xFF94A3B8),
+                      size: 26,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Categories',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: _selectedIndex == 3
+                            ? const Color(0xFF1E3A5F)
+                            : const Color(0xFF94A3B8),
+                        fontWeight: _selectedIndex == 3
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              //bouton de Stock
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const StockMovementPage(),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.store_outlined,
+                      color: _selectedIndex == 4
+                          ? const Color(0xFF1E3A5F)
+                          : const Color(0xFF94A3B8),
+                      size: 26,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Stock',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: _selectedIndex == 4
+                            ? const Color(0xFF1E3A5F)
+                            : const Color(0xFF94A3B8),
+                        fontWeight: _selectedIndex == 4
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //bouton de profile
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfilePage(),
+                    ),
+                  );
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.person,
+                      color: _selectedIndex == 5
+                          ? const Color(0xFF1E3A5F)
+                          : const Color(0xFF94A3B8),
+                      size: 26,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Profile',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: _selectedIndex == 5
+                            ? const Color(0xFF1E3A5F)
+                            : const Color(0xFF94A3B8),
+                        fontWeight: _selectedIndex == 5
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
