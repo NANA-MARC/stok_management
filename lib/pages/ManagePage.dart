@@ -138,6 +138,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                 ),
               ),
               const SizedBox(height: 16),
+
               TextField(
                 controller: descController,
                 decoration: InputDecoration(
